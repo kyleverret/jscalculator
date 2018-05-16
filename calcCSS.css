@@ -1,0 +1,17 @@
+body{
+background-color: aquamarine;
+}
+
+#calcscreen{
+    margin: auto;
+    background-color: gray;
+    width: 70%;
+    height: 100%;
+    padding: 7px 7px 7px 7px;
+}
+
+#calcbod{
+    margin: auto;
+    padding: 100px;
+    background-color: cornflowerblue;
+}
