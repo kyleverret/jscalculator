@@ -1,9 +1,11 @@
 var nums = "";
 var opNext = "";
 var firstNum = "";
+var lastEntry = "";
 
 
 function inNum(indNum){
+    lastEntry = "num";
 if (nums.length == 1 && nums =="0"){
     nums =  indNum.toString();
     displayX.innerHTML = nums;
@@ -16,6 +18,7 @@ if (nums.length == 1 && nums =="0"){
 
 
 function addDeci(){
+    lastEntry = "num";
     if (nums.indexOf(".") == -1){
         console.log('trying to add deci!');
     nums = nums.concat(".");
@@ -25,6 +28,7 @@ function addDeci(){
 
 
 function nextOp(opR){
+    lastEntry = "opr";
     if (opNext != ""){
         nums = findTotal();
         document.getElementById("displayS").innerHTML = nums;
@@ -37,7 +41,22 @@ opNext = opR;
 function clearAll(){
     nums = "";
     opNext = "";
+    lastEntry = "";
     document.getElementById("displayS").innerHTML = nums;
+}
+
+function clearLast(){
+    console.log(lastEntry);
+    switch (lastEntry){
+        case lastEntry = "num":
+            console.log("trying!!");
+            nums = nums.slice(0, nums.length-1);
+            document.getElementById("displayS").innerHTML = nums;
+            break;
+        case lastEntry = "opr":
+            opNext = "";
+            break;
+    }
 }
 
 function equals(){
@@ -45,6 +64,7 @@ function equals(){
     document.getElementById("displayS").innerHTML = nums;
     firstNum = "";
     opNext = "";
+    lastEntry = "";
 }
 
 function findTotal(){
