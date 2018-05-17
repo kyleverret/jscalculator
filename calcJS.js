@@ -1,4 +1,4 @@
-var nums = "";
+var nums = "0";
 var opNext = "";
 var firstNum = "";
 var lastEntry = "";
@@ -8,7 +8,7 @@ function inNum(indNum){
     lastEntry = "num";
 if (nums.length == 1 && nums =="0"){
     nums =  indNum.toString();
-    displayX.innerHTML = nums;
+    document.getElementById("displayS").innerHTML = nums;
 }
     else{
       nums =  nums.concat(indNum);
@@ -29,6 +29,10 @@ function addDeci(){
 
 function nextOp(opR){
     lastEntry = "opr";
+    if (opNext != "" && nums == ""){
+        opNext = opR;
+    }
+    else{
     if (opNext != ""){
         nums = findTotal();
         document.getElementById("displayS").innerHTML = nums;
@@ -36,21 +40,22 @@ function nextOp(opR){
 opNext = opR;
     firstNum = parseFloat(nums);
     nums = "";
-}
+    }
+    }
 
 function clearAll(){
-    nums = "";
+    nums = "0";
     opNext = "";
     lastEntry = "";
     document.getElementById("displayS").innerHTML = nums;
 }
 
 function clearLast(){
-    console.log(lastEntry);
-    switch (lastEntry){
+    switch (lastEntry){ 
         case lastEntry = "num":
             console.log("trying!!");
             nums = nums.slice(0, nums.length-1);
+            if (nums == ""){nums = "0";}
             document.getElementById("displayS").innerHTML = nums;
             break;
         case lastEntry = "opr":
@@ -79,4 +84,9 @@ function findTotal(){
         case opNext = "addIt":
             return firstNum + secNum;
     }
+}
+
+function porCiento(){
+    nums = nums/100;
+    document.getElementById("displayS").innerHTML = nums;
 }

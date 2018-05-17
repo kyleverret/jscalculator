@@ -13,22 +13,23 @@
     <title>Calculator</title>
   </head>
   <body>
-      <div class="container-fluid">
-        <h1>Kyle's Javascript Calculator</h1>
+      <div class="container">
+        <h1>Kyle's JavaScript Calculator</h1>
           <br>
-    <div class="col" id="calcbod">
-        <div class="row">
+<div class = "row container text-center center-block">
+    <div class="col center-block" id="calcbod">
+        <div class="row" id="screenbox">
             <div id = "calcscreen">
-                <p id="displayS">Screen here</p>
+                <p id="displayS">0</p>
             </div>
         
         </div>
-        <div class = "row" id = "buttonRow">
+        <div class = "row container center-block" id = "buttonRow">
         <div class = "col-med">
-            <div class = "row">
+            <div class = "row buttonCol">
             <button class="btn" onclick="clearAll()">AC</button>
                 <button class="btn" onclick ="clearLast()">CE</button>
-                <button class="btn">%</button>
+                <button class="btn" onclick ="porCiento()">%</button>
             </div>
               <div class = "row">  
             <button class="btn" onclick="inNum(7)">7</button>
@@ -51,7 +52,7 @@
                 <button class="btn" onclick ="equals()">=</button>
             </div>
             </div>
-        <div class = "col-med">
+        <div class = "col-med" id= "buttonCol2">
         <div class = "row">
             <button class="btn" onclick="nextOp('splitIt')">÷</button>
             </div>
@@ -62,13 +63,14 @@
             <button class="btn" onclick="nextOp('subIt')">-</button>
             </div>
             <div class = "row">
-            <button class="btn" onclick="nextOp('addIt')">+</button>
+            <button class="btn" id="addButton" onclick="nextOp('addIt')">+</button>
             </div>
             </div>
         
         
         </div>
           
+          </div>
           </div>
       </div>
   
