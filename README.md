@@ -7,9 +7,9 @@ Add the following features:
  * CE - clear most recent entry
  
 Debug: 
-* math on numbers with decimals
+* limit decimal place so that it does not exceed the result screen.
 
 Improve:
-* CSS (not really my thing).
+* style (CSS is not really my thing).
 
 
